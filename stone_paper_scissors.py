@@ -32,8 +32,14 @@ computer_score = 0
 while True:
     user_choice = input("Enter 0 for 'stone', 1 for 'paper' or 2 for 'scissors' (Enter 'q' to exit): ")
     if user_choice == 'q':
-        print(f"Your Score: {user_score}.")
+        print(f"\nYour Score: {user_score}.")
         print(f"Computer Score: {computer_score}.")
+        if user_score > computer_score:
+            print("Congrats! You win.")
+        elif user_score == computer_score:
+            print("It's a tie.")
+        else:
+            print("Better luck next time!")
         print("Have a nice day!")
         break
     
@@ -44,6 +50,8 @@ while True:
 
     if user_choice == computer_choice:
         print("It's a tie.")
+        user_score += 1
+        computer_score += 1
 
     elif user_choice == 0 and computer_choice == 2:
         print("You win.")
